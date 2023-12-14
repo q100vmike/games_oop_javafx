@@ -21,11 +21,11 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
-        for (int i = 0; i < figures.length; i++) {
-            for (int j = 0; j < steps.length; j++) {
-                if (figures[i] != null) {
-                    if (figures[i].position().name().equals(steps[j].name())) {
-                        throw new OccupiedCellException(String.format("Cell %s is not Empty", steps[j].name()));
+            for (Figure figure : figures) {
+                for (Cell step : steps) {
+                if (figure != null) {
+                    if (figure.position().name().equals(step.name())) {
+                        throw new OccupiedCellException(String.format("Cell %s is not Empty", step.name()));
                     }
                 }
             }

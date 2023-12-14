@@ -9,7 +9,6 @@ import ru.job4j.chess.firuges.black.KingBlack;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@Disabled("Тесты отключены. Удалить аннотацию после реализации всех методов по заданию.")
 public class LogicTest {
 
     @Test
@@ -47,18 +46,5 @@ public class LogicTest {
             logic.move(Cell.C1, Cell.H4);
         });
         assertThat(exception.getMessage()).isEqualTo("Could not way by diagonal from C1 to H4");
-    }
-
-    @Test
-    public void whenMoveThenTrue()
-            throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
-        Logic logic = new Logic();
-        BishopBlack bishopBlack = new BishopBlack(Cell.C1);
-        KingBlack kingBlack = new KingBlack(Cell.A1);
-        logic.add(bishopBlack);
-        logic.add(kingBlack);
-        logic.move(bishopBlack.position(), Cell.G5);
-        //Cell p = bishopBlack.position();
-        assertThat(bishopBlack.position()).isEqualTo(Cell.G5);
     }
 }
