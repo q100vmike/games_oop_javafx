@@ -40,9 +40,7 @@ public class LogicTest {
             throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
         Logic logic = new Logic();
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
-        KingBlack kingBlack = new KingBlack(Cell.A1);
         logic.add(bishopBlack);
-        logic.add(kingBlack);
         ImpossibleMoveException exception = assertThrows(ImpossibleMoveException.class, () -> {
             logic.move(Cell.C1, Cell.A2);
         });
