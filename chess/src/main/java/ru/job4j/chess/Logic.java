@@ -25,7 +25,8 @@ public final class Logic {
                 for (Cell step : steps) {
                 if (figure != null) {
                     if (figure.position().name().equals(step.name())) {
-                        throw new OccupiedCellException(String.format("Cell %s is not Empty", step.name()));
+                        throw new OccupiedCellException(String.format("Cell %s is not Empty",
+                                step.name()));
                     }
                 }
             }
