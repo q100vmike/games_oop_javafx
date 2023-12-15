@@ -20,6 +20,7 @@ public class LogicTest {
         });
         assertThat(exception.getMessage()).isEqualTo("Figure not found on the board.");
     }
+
     @Test
     public void whenMoveThenFigureOccupiedCellException()
             throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
@@ -42,9 +43,8 @@ public class LogicTest {
         KingBlack kingBlack = new KingBlack(Cell.A1);
         logic.add(bishopBlack);
         logic.add(kingBlack);
-        ImpossibleMoveException exception = assertThrows(ImpossibleMoveException.class, () -> {
-            logic.move(Cell.C1, Cell.H4);
-        });
+        ImpossibleMoveException exception = assertThrows(ImpossibleMoveException.class,
+                () -> { logic.move(Cell.C1, Cell.H4); });
         assertThat(exception.getMessage()).isEqualTo("Could not way by diagonal from C1 to H4");
     }
 }
